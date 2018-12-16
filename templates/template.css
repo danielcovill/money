@@ -1,0 +1,60 @@
+:root {
+    --main-background-color: rgb(82, 207, 90);
+    --main-foreground-color: black;
+    --section-color: rgb(182, 187, 162);
+}
+
+body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: "leftColumn moduleContainer";
+    padding: 0;
+    margin: 0;
+    background-color: var(--main-background-color);
+}
+
+.leftCol {
+    grid-area: leftColumn;
+    border-right: 2px solid var(--main-foreground-color);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto;
+    align-content: start;
+    grid-row-gap: 2px;
+}
+
+.columnList {
+    margin: 2px;
+    background-color: var(--section-color);
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.listTitle, .account {
+    width: 100%;
+    margin: 0;
+    padding: 5px 3px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+}
+.account, #allAccounts {
+    cursor: pointer;
+}
+.listTitle, #allAccounts {
+    font-weight: bold;
+}
+
+.accountName {
+    grid-column-start: 1;
+}
+.accountBalance {
+    grid-column-start: 2;
+    overflow: hidden;
+}
+
+.ledgerModule {
+    grid-area: moduleContainer;
+    margin: 0;
+    padding: 20px;
+    background-color: beige;
+}
